@@ -51,10 +51,16 @@ const texture = PIXI.loader.resources.icon.texture
 
 ```
 
-Progressなど
+## Progressなど
+- [ドキュメントに記載あり](https://github.com/kittykatattack/learningPixi#monitoring-load-progress)
 
-ドキュメントに記載あり。
-https://github.com/kittykatattack/learningPixi#monitoring-load-progress
+- [発展](https://github.com/kittykatattack/learningPixi#monitoring-load-progress)
 
-発展
-https://github.com/kittykatattack/learningPixi#monitoring-load-progress
+
+## タイルセット/アトラスの読み込み
+
+Tileset
+https://github.com/kittykatattack/learningPixi#make-a-sprite-from-a-tileset-sub-image
+
+Atlas
+https://github.com/kittykatattack/learningPixi#using-a-texture-atlas
