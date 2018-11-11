@@ -8,62 +8,19 @@ Containersの分類の一種でオブジェクトの階層やグルーピング�
 
 描画はWebGLなので爆速
 
-## アセットの読み込み
-
-ゲーム開発で読み込み方法は大きく分けて3種類ある.
-
-- 単一のスプライトの読み込み
-- タイルセット
-- アトラス
-
-PixijsはWebGL（GPU）を使って描画するのでGPUで制御可能にフォーマットしなければならない。
-WebGLで制御可能な画像のことをTextureと呼びます。
-スプライトに画像を表示するには通常の画像をTextureに変換する必要がある.
-
-Pixijsは高速に動作させるためにテクスチャキャッシュを使用する.
-テクスチャキャッシュを使用して全てのテクスチャの読み込み・書き込みを行う。
-テクスチャ名は自動でテクスチャのパスになります。
-
-
-## 基本的な読み込み
+## Sprite表示制御
 
 ```
-// テクスチャの読み込み　＆　変換してるっぽい
-PIXI.loader
-  .add("images/icon.jpg")
-  .load(setup);
-
-
-function setup() {
-  // キャッシュからテクスチャを読み込む
-  let texture = PIXI.utils.TextureCache["images/icon.jpg"];
-  let sprite = new PIXI.Sprite(texture);
-
-  app.stage.addChild(sprite);
-}
-
+// 非表示
+sprite.visible = false;
+// 削除
+app.stage.removeChild(sprite);
 ```
 
-名前つきテクスチャ
 
-積極的に使ったほうが良さそう.
+## Spriteをまとめる
 
-```
-// 第一引数を指定することによりテクスチャにショートカット名を設定可能.
-PIXI.loader
-   .add("icon", "images/icon.jpg")
-   .load(setup);
+https://github.com/kittykatattack/learningPixi#grouping-sprites
 
-// 同等の読み込み
-// const texture = PIXI.utils.TextureCache["images/icon.jpg"];
-const texture = PIXI.loader.resources.icon.texture
-
-```
-
-Progressなど
-
-ドキュメントに記載あり。
-https://github.com/kittykatattack/learningPixi#monitoring-load-progress
-
-発展
-https://github.com/kittykatattack/learningPixi#monitoring-load-progress
+- 階層ということでグローバルとローカル座標系の登場
+https://github.com/kittykatattack/learningPixi#grouping-sprites
