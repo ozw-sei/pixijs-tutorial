@@ -1,4 +1,6 @@
 var app = new PIXI.Application({ width: 640, height: 360 });
+app.renderer.backgroundColor = 0xFFFFFF;
+app.renderer.autoResize = true;
 
 document.body.appendChild(app.view);
 
